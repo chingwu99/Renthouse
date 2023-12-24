@@ -8,12 +8,12 @@ export default async function getListings() {
       },
     });
 
-    const safeListing = listings.map((listing) => ({
+    const safeListings = listings.map((listing) => ({
       ...listing,
       createdAt: listing.createdAt.toISOString(),
     }));
 
-    return safeListing;
+    return safeListings;
   } catch (error: any) {
     throw new Error(error);
   }
