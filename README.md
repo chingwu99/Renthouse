@@ -4,7 +4,6 @@
 
 ![My Image](./readmeimg/home.png)
 ![My Image](./readmeimg/login.png)
-![My Image](./readmeimg/news.png)
 ![My Image](./readmeimg/selectType.png)
 ![My Image](./readmeimg/settingCount.png)
 ![My Image](./readmeimg/uploadImg.png)
