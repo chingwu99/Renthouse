@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 租房網站專案
 
-## Getting Started
+模擬 AirBnB 訂房網站的全端專案
 
-First, run the development server:
+![My Image](./readmeimg/home.png)
+![My Image](./readmeimg/login.png)
+![My Image](./readmeimg/news.png)
+![My Image](./readmeimg/selectType.png)
+![My Image](./readmeimg/settingCount.png)
+![My Image](./readmeimg/uploadImg.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 關於租房網站專案
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1.使用 Next.js 13 ( App Router )、React Hook、TypeScript 開發全站  
+2.使用 zustand 管理狀態  
+3.使用 Tailwind CSS 完成 RWD Web Layout  
+4.使用 Prisma 作為與 MongoDB 串連的 ORM 並設定關聯性，完成 NoSQL 操作  
+5.使用 NextAuth.js 完成 authentication，包含 Google、GitHub OAuth 登入系統  
+6.使用 Next-cloudinary 管理圖片資源  
+7.使用 react-spinners 套件開發客製化動畫  
+8.使用 Vercel 完成部署
