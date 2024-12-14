@@ -1,23 +1,25 @@
-"use client";
+'use client'
 
-import useCountries from "@/app/hook/useCountries";
-import Select from "react-select";
+import Select from 'react-select'
+
+import useCountries from '@/app/hook/useCountries'
 
 export type CountrySelectValue = {
-  flag: string;
-  label: string;
-  latlng: number[];
-  region: string;
-  value: string;
-};
+  flag: string
+  label: string
+  latlng: number[]
+  region: string
+  value: string
+}
 
 interface CountrySelectProps {
-  value?: CountrySelectValue;
-  onChange: (value: CountrySelectValue) => void;
+  value?: CountrySelectValue
+  // eslint-disable-next-line no-unused-vars
+  onChange: (value: CountrySelectValue) => void
 }
 
 const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
-  const { getAll } = useCountries();
+  const { getAll } = useCountries()
   return (
     <div>
       <Select
@@ -31,8 +33,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
             <div>{option.flag}</div>
 
             <div>
-              {option.label},
-              <span className=" text-neutral-500 ml-1">{option.region}</span>
+              {option.label},<span className=" text-neutral-500 ml-1">{option.region}</span>
             </div>
           </div>
         )}
@@ -52,7 +53,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
         })}
       />
     </div>
-  );
-};
+  )
+}
 
-export default CountrySelect;
+export default CountrySelect
