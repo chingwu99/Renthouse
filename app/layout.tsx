@@ -12,8 +12,8 @@ import ClientOnly from './components/ClientOnly'
 import getCurrentUser from './actions/getCurrentUser'
 
 export const metadata = {
-  title: 'Airbnb',
-  description: 'Airbnb Clone',
+  title: 'Renthouse',
+  description: 'Your Journey, Your Home',
 }
 
 const font = Nunito({
