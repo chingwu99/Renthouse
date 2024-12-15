@@ -1,14 +1,8 @@
-# 租房網站專案
+# 訂房網站專案
 
-模擬 AirBnB 訂房網站的全端專案
+模擬訂房網站的全端專案
 
-![My Image](./readmeimg/home.png)
-![My Image](./readmeimg/login.png)
-![My Image](./readmeimg/selectType.png)
-![My Image](./readmeimg/settingCount.png)
-![My Image](./readmeimg/uploadImg.png)
-
-## 關於租房網站專案
+## 關於訂房網站專案
 
 1.使用 Next.js 13 ( App Router )、React Hook、TypeScript 開發全站  
 2.使用 zustand 管理狀態  

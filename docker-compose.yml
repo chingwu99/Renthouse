@@ -1,0 +1,14 @@
+services:
+  renthouse-dev:
+    build: .
+    ports:
+      - '4000:3000'
+    volumes:
+      - ./:/app # 將本機根目錄的資料夾掛載至 container 的工作目錄 app 資料夾中
+      - node_modules:/app/node_modules # 使用命名 volume 保護 node_modules
+    environment:
+      - NEXTAUTH_URL=http://localhost:4000
+    profiles: ['dev']
+# 定義命名 volume
+volumes:
+  node_modules:

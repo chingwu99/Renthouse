@@ -1,26 +1,28 @@
-"use client";
+'use client'
 
-import { CldUploadWidget } from "next-cloudinary";
-import Image from "next/image";
-import { useCallback } from "react";
-import { TbPhotoPlus } from "react-icons/tb";
+import { CldUploadWidget } from 'next-cloudinary'
+import Image from 'next/image'
+import { useCallback } from 'react'
+import { TbPhotoPlus } from 'react-icons/tb'
 
 declare global {
-  var cloudinary: any;
+  // eslint-disable-next-line no-unused-vars
+  var cloudinary: any
 }
 
 interface ImageUploadProps {
-  onChange: (value: string) => void;
-  value: string;
+  // eslint-disable-next-line no-unused-vars
+  onChange: (value: string) => void
+  value: string
 }
 
 const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
   const handleUpLoad = useCallback(
     (result: any) => {
-      onChange(result.info.secure_url);
+      onChange(result.info.secure_url)
     },
     [onChange]
-  );
+  )
 
   return (
     <CldUploadWidget
@@ -30,31 +32,25 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
         maxFiles: 1,
       }}
     >
-      {({ open }) => {
-        return (
-          <div
-            onClick={() => open?.()}
-            className=" relative cursor-pointer hover:opacity-70 transition border-dashed border-2 p-20 border-neutral-300 flex flex-col justify-center items-center gap-4 text-neutral-600"
-          >
-            <TbPhotoPlus size={50} />
+      {({ open }) => (
+        <div
+          onClick={() => open?.()}
+          // eslint-disable-next-line max-len
+          className="relative flex cursor-pointer flex-col items-center justify-center gap-4 border-2 border-dashed border-neutral-300 p-20 text-neutral-600 transition hover:opacity-70"
+        >
+          <TbPhotoPlus size={50} />
 
-            <div className=" font-semibold text-lg">Click to uploadPreset</div>
+          <div className="text-lg font-semibold">Click to uploadPreset</div>
 
-            {value && (
-              <div className=" absolute inset-0 w-full h-full">
-                <Image
-                  alt="Upload"
-                  fill
-                  style={{ objectFit: "cover" }}
-                  src={value}
-                />
-              </div>
-            )}
-          </div>
-        );
-      }}
+          {value && (
+            <div className="absolute inset-0 h-full w-full">
+              <Image alt="Upload" fill style={{ objectFit: 'cover' }} src={value} />
+            </div>
+          )}
+        </div>
+      )}
     </CldUploadWidget>
-  );
-};
+  )
+}
 
-export default ImageUpload;
+export default ImageUpload

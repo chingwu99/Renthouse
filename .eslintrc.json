@@ -1,3 +1,92 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "next/core-web-vitals", "prettier", "plugin:import/warnings"],
+  "globals": {
+    "React": "writable"
+  },
+  "ignorePatterns": [],
+  "plugins": ["prettier"],
+  "rules": {
+    "react/function-component-definition": [
+      1,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "semi": ["error", "never"],
+    "react/jsx-fragments": 0,
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreUrls": true
+      }
+    ],
+    "spaced-comment": [2, "always"],
+    "import/named": "error",
+    "import/newline-after-import": [
+      "error",
+      {
+        "count": 1
+      }
+    ],
+    "import/no-unresolved": "error",
+    "import/no-duplicates": "error",
+    "import/no-cycle": [2, { "ignoreExternal": false, "maxDepth": 2 }],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "newlines-between": "always"
+      }
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": ["state", "res", "ctx"]
+      }
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false
+      }
+    ],
+    "no-unused-vars": ["error", { "args": "after-used" }],
+    "@typescript-eslint/no-unused-vars": "off",
+    "arrow-body-style": ["error", "as-needed"],
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "react/jsx-no-useless-fragment": "error",
+    "react/self-closing-comp": "error",
+    "no-else-return": "error",
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
+    "react/jsx-boolean-value": ["error", "never"]
+    // "@next/next/no-img-element": "off",
+    // "@next/next/no-css-tags": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "alias": {
+        "map": [["@", "__dirname"]],
+        "extensions": [".ts", ".js", ".jsx", ".tsx", ".json"]
+      }
+    }
+  }
 }

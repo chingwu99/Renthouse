@@ -1,59 +1,50 @@
-import prisma from "@/app/libs/prismadb";
+import prisma from '@/app/libs/prismadb'
 
 export interface IListingParams {
-  userId?: string;
-  guestCount?: number;
-  roomCount?: number;
-  bathroomCount?: number;
-  startDate?: string;
-  endDate?: string;
-  locationValue?: string;
-  category?: string;
+  userId?: string
+  guestCount?: number
+  roomCount?: number
+  bathroomCount?: number
+  startDate?: string
+  endDate?: string
+  locationValue?: string
+  category?: string
 }
 
 export default async function getListings(params: IListingParams) {
   try {
-    const {
-      userId,
-      guestCount,
-      roomCount,
-      bathroomCount,
-      startDate,
-      endDate,
-      locationValue,
-      category,
-    } = params;
+    const { userId, guestCount, roomCount, bathroomCount, startDate, endDate, locationValue, category } = params
 
-    let query: any = {};
+    let query: any = {}
 
     if (userId) {
-      query.userId = userId;
+      query.userId = userId
     }
 
     if (category) {
-      query.category = category;
+      query.category = category
     }
 
     if (guestCount) {
       query.guestCount = {
         gte: +guestCount,
-      };
+      }
     }
 
     if (roomCount) {
       query.roomCount = {
         gte: +roomCount,
-      };
+      }
     }
 
     if (bathroomCount) {
       query.bathroomCount = {
         gte: +bathroomCount,
-      };
+      }
     }
 
     if (locationValue) {
-      query.locationValue = locationValue;
+      query.locationValue = locationValue
     }
 
     if (startDate && endDate) {
@@ -80,23 +71,23 @@ export default async function getListings(params: IListingParams) {
             ],
           },
         },
-      };
+      }
     }
 
     const listings = await prisma.listing.findMany({
       where: query,
       orderBy: {
-        createdAt: "desc",
+        createdAt: 'desc',
       },
-    });
+    })
 
     const safeListings = listings.map((listing) => ({
       ...listing,
       createdAt: listing.createdAt.toISOString(),
-    }));
+    }))
 
-    return safeListings;
+    return safeListings
   } catch (error: any) {
-    throw new Error(error);
+    throw new Error(error)
   }
 }
