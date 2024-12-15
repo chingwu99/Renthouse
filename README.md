@@ -2,6 +2,12 @@
 
 模擬訂房網站的全端專案
 
+![My Image](./readmeimg/home.png)
+![My Image](./readmeimg/login.png)
+![My Image](./readmeimg/select_type.png)
+![My Image](./readmeimg/setting_count.png)
+![My Image](./readmeimg/upload_img.png)
+
 ## 關於訂房網站專案
 
 1.使用 Next.js 13 ( App Router )、React Hook、TypeScript 開發全站  
